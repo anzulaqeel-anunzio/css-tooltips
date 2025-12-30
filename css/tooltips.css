@@ -1,0 +1,78 @@
+/* Developed for Anunzio International by Anzul Aqeel. Contact +971545822608 or +971585515742. Linkedin Profile: linkedin.com/in/anzulaqeel */
+
+/* 
+ * Developed for Anunzio International by Anzul Aqeel
+ * Contact +971545822608 or +971585515742
+ */
+
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+[data-tooltip]::before {
+    content: "";
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #333;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 1000;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modifiers */
+.tooltip-right::after {
+    bottom: auto;
+    left: 110%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tooltip-right::before {
+    bottom: auto;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.tooltip-bottom::after {
+    bottom: auto;
+    top: 125%;
+}
+
+.tooltip-bottom::before {
+    bottom: auto;
+    top: 115%;
+    transform: translateX(-50%) rotate(180deg);
+}
+
+/* Developed for Anunzio International by Anzul Aqeel. Contact +971545822608 or +971585515742. Linkedin Profile: linkedin.com/in/anzulaqeel */
